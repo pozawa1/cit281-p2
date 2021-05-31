@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
+# Objectives
+1. Gain experience using git via your CLI and Visual Studio Code (VSCode) Source Control
+2. Gain experience writing and executing non-web server Node.js JavaScript code
+3. Practice refactoring JavaScript code
 
-You can use the [editor on GitHub](https://github.com/pozawa1/cit281-p2/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# Technologies Used
+- Terminal
+- VSCode
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Part 1
+Complete [Lab 2](https://pozawa1.github.io/cit281-lab2/)
 
-### Markdown
+# Part 2
+Refractor p1-random.js from Project 1 to isolate code into functions, eliminate global variables, and make code self-documenting by variable and function name choices.
+```
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+function getRandomString() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let result = "";
+    for (let i = 0; i < getRandomInteger(5, 26); i++) {
+        result += alphabet[getRandomInteger(1,alphabet.length-1)];
+    }
+    return result; 
+}
+console.log(getRandomString());
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Create a new function getRandomLetter() that will return a single, random, lowercase letter.
+```
+function getRandomLetter() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); 
+    
+    for (let i = 0; i < 1; i++) {
+        return alphabet[Math.floor(Math.random() * alphabet.length)]
+    }
+}
+console.log(getRandomLetter());
+```
 
-### Jekyll Themes
+Create a new function getRandomString(minLength, maxLength) that will return the random length string. 
+```
+function getRandomString() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let result = "";
+    for (let i = 0; i < getRandomInteger(5, 26); i++) {
+        result += alphabet[getRandomInteger(1,alphabet.length-1)];
+    }
+    return result; 
+}
+console.log(getRandomString());
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pozawa1/cit281-p2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Create a new function called getSortedString(string) that will return a string in ascending order (i.e., xpacd would return acdpx).
+```
+function getSortedString(string) { return string.split("").sort().join(""); }
+console.log(getSortedString("xpacd")); //Returns "acdpx"
+```
 
-### Support or Contact
+# Part 3
+Replace all of the function definitions with function expressions.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Part 4
+Create a .gitignore file to ignore .txt and .bak files.
+
+![p2-vscode-diff](https://user-images.githubusercontent.com/83732149/120234597-338a5800-c20d-11eb-8f12-44967bbfe450.png)
