@@ -53,7 +53,7 @@ function getRandomString() {
 console.log(getRandomString());
 ```
 
-Create a new function called getSortedString(string) that will return a string in ascending order (i.e., xpacd would return acdpx).
+Create a new function called getSortedString(string) that will return a string in ascending order.
 ```
 function getSortedString(string) { return string.split("").sort().join(""); }
 console.log(getSortedString("xpacd")); //Returns "acdpx"
