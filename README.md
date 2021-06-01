@@ -66,3 +66,6 @@ Replace all of the function definitions with function expressions.
 Create a .gitignore file to ignore .txt and .bak files.
 
 ![p2-vscode-diff](https://user-images.githubusercontent.com/83732149/120234597-338a5800-c20d-11eb-8f12-44967bbfe450.png)
+
+[Source Code](https://github.com/pozawa1/cit281-p2/blob/main/source-code-p2)
+[Return to Homepage](https://pozawa1.github.io/)
