@@ -1,0 +1,139 @@
+// p2-random.js
+
+/*
+// Canvas posted solution
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+let result = "";
+
+for (let i = 0; i < getRandomInteger(5, 26); i++) {
+    result += alphabet[getRandomInteger(1,alphabet.length-1)];
+}
+
+console.log(result);
+*/
+
+//Isolate code into functions
+ // Eliminate global variables
+// Make code self-documenting by variable and function name choices
+
+// Commented out for getRandomString function
+/*
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+*/
+
+function getRandomString() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let result = "";
+    for (let i = 0; i < getRandomInteger(5, 26); i++) {
+        result += alphabet[getRandomInteger(1,alphabet.length-1)];
+    }
+    return result; 
+}
+console.log(getRandomString());
+
+// Returns a single, random, lowercase letter
+function getRandomLetter() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); 
+    
+    for (let i = 0; i < 1; i++) {
+        return alphabet[Math.floor(Math.random() * alphabet.length)]
+    }
+}
+console.log(getRandomLetter());
+
+// Returns the random length string
+// Adjusted getRandomInteger parameters
+function getRandomInteger(minLength, maxLength) {
+    return Math.floor(Math.random() * (maxLength - minLength) + minLength);
+}
+
+function getRandomString(minLength, maxLength) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); 
+    let result = "";
+
+    for (let i = 0; i < getRandomInteger(10, 20); i++) {
+        result += getRandomLetter([getRandomInteger(1,alphabet.length-1)]);
+    }
+    return result; 
+}
+console.log(getRandomString());
+
+// Returns a string in ascending order
+function getSortedString(string) { return string.split("").sort().join(""); }
+console.log(getSortedString("xpacd")); //Returns "acdpx"
+
+// p2-expressions.js
+
+/*
+// Canvas posted solution
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+let result = "";
+
+for (let i = 0; i < getRandomInteger(5, 26); i++) {
+    result += alphabet[getRandomInteger(1,alphabet.length-1)];
+}
+
+console.log(result);
+*/
+
+//Isolate code into functions
+ // Eliminate global variables
+// Make code self-documenting by variable and function name choices
+
+// Commented out for getRandomString function
+/*
+const getRandomInteger = function(min, max)  {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+*/
+
+const getRandomString = function() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let result = "";
+    for (let i = 0; i < getRandomInteger(5, 26); i++) {
+        result += alphabet[getRandomInteger(1,alphabet.length-1)];
+    }
+    return result; 
+}
+console.log(getRandomString());
+
+// Returns a single, random, lowercase letter
+const getRandomLetter = function() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); 
+    
+    for (let i = 0; i < 1; i++) {
+        return alphabet[Math.floor(Math.random() * alphabet.length)]
+    }
+}
+console.log(getRandomLetter());
+
+// Returns the random length string
+// Adjusted getRandomInteger parameters
+const getRandomInteger = function(minLength, maxLength) {
+    return Math.floor(Math.random() * (maxLength - minLength) + minLength);
+}
+
+const getRandomString = function(minLength, maxLength) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); 
+    let result = "";
+
+    for (let i = 0; i < getRandomInteger(10, 20); i++) {
+        result += getRandomLetter([getRandomInteger(1,alphabet.length-1)]);
+    }
+    return result; 
+}
+console.log(getRandomString());
+
+// Returns a string in ascending order
+const getSortedString = function(string) { return string.split("").sort().join(""); }
+console.log(getSortedString("xpacd")); //Returns "acdpx"
